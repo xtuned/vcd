@@ -1,12 +1,12 @@
 variable "vcd_pass" {
   description = "VCD Password"
   type        = string
-  default     = "***REMOVED***"
+  default     = "hardpassword"
 }
 variable "vcd_url" {
   description = "VCD URL"
   type        = string
-  default     = "***REMOVED***"
+  default     = "example.vcd.url"
 }
 variable "vcd_max_retry_timeout" {
   type = number
