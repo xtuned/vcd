@@ -1,12 +1,12 @@
 variable "vcd_pass" {
   description = "VCD Password"
   type        = string
-  default     = "XgYw!cvf3!ad"
+  default     = "hardpassword"
 }
 variable "vcd_url" {
   description = "VCD URL"
   type        = string
-  default     = "https://vcd.voldemort.zpod.io/api"
+  default     = "example.vcd.url"
 }
 variable "vcd_max_retry_timeout" {
   type = number
