@@ -21,8 +21,12 @@ variable "vcd_allow_unverified_ssl" {
 
 variable "orgs" {
   type = map(object({
-    name          = string
-    full_name     = string
-    description   = string
+    name                                  = string
+    full_name                             = string
+    description                           = string
+    maximum_runtime_lease_in_sec          = number
+    power_off_on_runtime_lease_expiration = bool
+    maximum_storage_lease_in_sec          = number
+    delete_on_storage_lease_expiration    = bool
   }))
 }

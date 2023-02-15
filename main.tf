@@ -8,13 +8,13 @@ resource "vcd_org" "my-org" {
   delete_force     = true
 
   vapp_lease {
-    maximum_runtime_lease_in_sec          = 3600 # 1 hour
-    power_off_on_runtime_lease_expiration = true
-    maximum_storage_lease_in_sec          = 0 # never expires
-    delete_on_storage_lease_expiration    = false
+    maximum_runtime_lease_in_sec          = each.value.maximum_runtime_lease_in_sec
+    power_off_on_runtime_lease_expiration = each.value.power_off_on_runtime_lease_expiration
+    maximum_storage_lease_in_sec          = each.value.maximum_storage_lease_in_sec
+    delete_on_storage_lease_expiration    = each.value.delete_on_storage_lease_expiration
   }
   vapp_template_lease {
-    maximum_storage_lease_in_sec       = 604800 # 1 week
-    delete_on_storage_lease_expiration = true
+    maximum_storage_lease_in_sec       = each.value.maximum_storage_lease_in_sec
+    delete_on_storage_lease_expiration = each.value.power_off_on_runtime_lease_expiration
   }
 }
